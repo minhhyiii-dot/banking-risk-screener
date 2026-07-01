@@ -150,6 +150,48 @@ Outputs are written to:
 outputs/python_baseline
 ```
 
+## Run The Local Web MVP
+
+Install frontend dependencies:
+
+```bash
+cd app
+npm install
+```
+
+Start the local app:
+
+```bash
+npm run dev
+```
+
+Main local views:
+
+```text
+http://127.0.0.1:5173/#/
+http://127.0.0.1:5173/#/screener
+http://127.0.0.1:5173/#/model
+http://127.0.0.1:5173/#/data
+http://127.0.0.1:5173/#/limitations
+```
+
+Build a production-ready static app:
+
+```bash
+npm run build
+npm run preview
+```
+
+The MVP is static and reads public demo artifacts from:
+
+```text
+data/sample/predictions_sample.json
+data/processed/new1_predictions.json
+data/processed/model_metrics.json
+model/metrics.json
+model/predictions_sample.csv
+```
+
 ## Deployment Plan
 
 The planned delivery flow is:

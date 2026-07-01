@@ -1,0 +1,15 @@
+{
+  "model": "NEW1",
+  "threshold": 0.437,
+  "accuracy": 0.8076923076923077,
+  "risk_precision": 0.43902439024390244,
+  "risk_recall": 0.45,
+  "macro_f1": 0.6640826873385013,
+  "confusion_matrix": {
+    "labels": ["Risk", "NoRisk"],
+    "matrix": [
+      [18, 22],
+      [23, 171]
+    ]
+  }
+}

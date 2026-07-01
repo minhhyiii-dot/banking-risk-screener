@@ -1,0 +1,118 @@
+{
+  "model": "NEW1",
+  "task": "binary earnings-risk screening",
+  "threshold": 0.437,
+  "dataset": {
+    "banks": 26,
+    "observations": 1202,
+    "test_rows": 234,
+    "test_risk": 40,
+    "test_norisk": 194
+  },
+  "feature_counts": {
+    "member_258": 258,
+    "member_309": 309,
+    "union": 357,
+    "overlap": 210
+  },
+  "test_at_rapidminer_threshold": {
+    "accuracy": 0.8076923076923077,
+    "balanced_accuracy": 0.665721649484536,
+    "macro_f1": 0.6640826873385013,
+    "per_class": {
+      "Risk": {
+        "precision": 0.43902439024390244,
+        "recall": 0.45,
+        "f1": 0.4444444444444444,
+        "support": 40
+      },
+      "NoRisk": {
+        "precision": 0.8860103626943006,
+        "recall": 0.8814432989690721,
+        "f1": 0.8837209302325582,
+        "support": 194
+      }
+    },
+    "confusion_matrix": {
+      "labels": ["Risk", "NoRisk"],
+      "matrix": [
+        [18, 22],
+        [23, 171]
+      ]
+    }
+  },
+  "thresholds": {
+    "rapidminer_reference": 0.437,
+    "python_validation_selected": 0.426
+  },
+  "model_history": [
+    {
+      "id": "OLD1",
+      "name": "Decision Tree",
+      "task": "Growth / Safe / Risky",
+      "role": "Archived coursework baseline",
+      "test_accuracy": 0.3605769230769231,
+      "note": "Moc dau tien cua bai toan phan loai 3 lop."
+    },
+    {
+      "id": "OLD2",
+      "name": "Random Forest",
+      "task": "Growth / Safe / Risky",
+      "role": "Archived coursework baseline",
+      "test_accuracy": 0.4375,
+      "note": "Baseline ensemble cho formulation cu."
+    },
+    {
+      "id": "OLD3",
+      "name": "Gradient Boosted Trees",
+      "task": "Growth / Safe / Risky",
+      "role": "Archived coursework baseline",
+      "test_accuracy": 0.3894230769230769,
+      "note": "Thu nghiem boosting trong formulation cu."
+    },
+    {
+      "id": "NEW1",
+      "name": "Two-member Ensemble",
+      "task": "Risk / NoRisk",
+      "role": "Selected MVP model",
+      "test_accuracy": 0.8076923076923077,
+      "risk_recall": 0.45,
+      "note": "Model chinh cua web demo, dung ket qua NEW1 de sang loc."
+    },
+    {
+      "id": "NEW2",
+      "name": "Prequential Ensemble",
+      "task": "Risk / NoRisk",
+      "role": "Prequential challenger",
+      "test_accuracy": 0.8162393162393162,
+      "risk_recall": 0.525,
+      "note": "Challenger co rolling/prequential evaluation, duoc mention de giai thich hanh trinh model."
+    }
+  ],
+  "feature_groups": [
+    {
+      "name": "Profitability",
+      "description": "ROA, ROE, net income margin va cac bien phan anh kha nang sinh loi."
+    },
+    {
+      "name": "Growth",
+      "description": "Tang truong doanh thu, loi nhuan va cac bien so sanh theo quy/nam."
+    },
+    {
+      "name": "Asset quality",
+      "description": "Chi bao chat luong tai san, provision va cac dau hieu lien quan rui ro tin dung."
+    },
+    {
+      "name": "Capital & liquidity",
+      "description": "Cac ty le von, thanh khoan va cau truc bang can doi."
+    },
+    {
+      "name": "Market signals",
+      "description": "Gia, return, volatility va tin hieu thi truong lien quan co phieu."
+    },
+    {
+      "name": "Lag / rolling features",
+      "description": "Gia tri tre va bien tong hop rolling giup model nhin xu huong lich su."
+    }
+  ]
+}

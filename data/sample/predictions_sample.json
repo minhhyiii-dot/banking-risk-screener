@@ -1,0 +1,137 @@
+[
+  {
+    "row_key": "ABB__2023Q4__2024Q1",
+    "ticker": "ABB",
+    "feature_quarter": "2023Q4",
+    "target_quarter": "2024Q1",
+    "ensemble_probability": 0.5875281,
+    "prediction": "Risk",
+    "actual": "Risk"
+  },
+  {
+    "row_key": "ABB__2024Q1__2024Q2",
+    "ticker": "ABB",
+    "feature_quarter": "2024Q1",
+    "target_quarter": "2024Q2",
+    "ensemble_probability": 0.56953186,
+    "prediction": "Risk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "ABB__2024Q2__2024Q3",
+    "ticker": "ABB",
+    "feature_quarter": "2024Q2",
+    "target_quarter": "2024Q3",
+    "ensemble_probability": 0.2595101,
+    "prediction": "NoRisk",
+    "actual": "Risk"
+  },
+  {
+    "row_key": "ABB__2024Q3__2024Q4",
+    "ticker": "ABB",
+    "feature_quarter": "2024Q3",
+    "target_quarter": "2024Q4",
+    "ensemble_probability": 0.6520252,
+    "prediction": "Risk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "ABB__2025Q2__2025Q3",
+    "ticker": "ABB",
+    "feature_quarter": "2025Q2",
+    "target_quarter": "2025Q3",
+    "ensemble_probability": 0.356166,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "ACB__2024Q1__2024Q2",
+    "ticker": "ACB",
+    "feature_quarter": "2024Q1",
+    "target_quarter": "2024Q2",
+    "ensemble_probability": 0.13737322,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "ACB__2025Q1__2025Q2",
+    "ticker": "ACB",
+    "feature_quarter": "2025Q1",
+    "target_quarter": "2025Q2",
+    "ensemble_probability": 0.38112095,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "ACB__2025Q3__2025Q4",
+    "ticker": "ACB",
+    "feature_quarter": "2025Q3",
+    "target_quarter": "2025Q4",
+    "ensemble_probability": 0.3075989,
+    "prediction": "NoRisk",
+    "actual": "Risk"
+  },
+  {
+    "row_key": "BAB__2024Q3__2024Q4",
+    "ticker": "BAB",
+    "feature_quarter": "2024Q3",
+    "target_quarter": "2024Q4",
+    "ensemble_probability": 0.68573755,
+    "prediction": "Risk",
+    "actual": "Risk"
+  },
+  {
+    "row_key": "BAB__2025Q2__2025Q3",
+    "ticker": "BAB",
+    "feature_quarter": "2025Q2",
+    "target_quarter": "2025Q3",
+    "ensemble_probability": 0.64305675,
+    "prediction": "Risk",
+    "actual": "Risk"
+  },
+  {
+    "row_key": "BID__2023Q4__2024Q1",
+    "ticker": "BID",
+    "feature_quarter": "2023Q4",
+    "target_quarter": "2024Q1",
+    "ensemble_probability": 0.19724129,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "BID__2024Q1__2024Q2",
+    "ticker": "BID",
+    "feature_quarter": "2024Q1",
+    "target_quarter": "2024Q2",
+    "ensemble_probability": 0.28181666,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "BID__2024Q2__2024Q3",
+    "ticker": "BID",
+    "feature_quarter": "2024Q2",
+    "target_quarter": "2024Q3",
+    "ensemble_probability": 0.02411493,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "CTG__2023Q4__2024Q1",
+    "ticker": "CTG",
+    "feature_quarter": "2023Q4",
+    "target_quarter": "2024Q1",
+    "ensemble_probability": 0.08393328,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  },
+  {
+    "row_key": "MBB__2023Q4__2024Q1",
+    "ticker": "MBB",
+    "feature_quarter": "2023Q4",
+    "target_quarter": "2024Q1",
+    "ensemble_probability": 0.4314661,
+    "prediction": "NoRisk",
+    "actual": "NoRisk"
+  }
+]

@@ -8,10 +8,14 @@ env/
 
 .ipynb_checkpoints/
 
+node_modules/
+dist/
+.vite/
+*.log
+
 *.joblib
 *.pkl
 *.pickle
 
 .DS_Store
 Thumbs.db
-
