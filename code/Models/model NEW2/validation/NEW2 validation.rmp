@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="12.0.005">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="12.0.005" expanded="true" height="68" name="Process" width="90" x="0" y="0">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="20260618"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="UTF-8"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="12.0.005" expanded="true" height="68" name="Retrieve pq087_validation_prequential" width="90" x="45" y="85">
+        <parameter key="repository_entry" value="//Local Repository/Intro_to_DS_final/pq087_validation_prequential"/>
+      </operator>
+      <operator activated="true" class="concurrency:loop_values" compatibility="12.0.005" expanded="true" height="82" name="Loop Target Quarter" width="90" x="246" y="85">
+        <parameter key="attribute" value="evaluation_target_quarter"/>
+        <parameter key="iteration_macro" value="loop_value"/>
+        <parameter key="reuse_results" value="false"/>
+        <parameter key="enable_parallel_execution" value="false"/>
+        <process expanded="true">
+          <operator activated="true" class="filter_examples" compatibility="12.0.005" expanded="true" height="103" name="Filter Current Evaluation Quarter" width="90" x="30" y="120">
+            <parameter key="parameter_string" value="evaluation_target_quarter = %{loop_value}"/>
+            <parameter key="parameter_expression" value=""/>
+            <parameter key="condition_class" value="attribute_value_filter"/>
+            <parameter key="invert_filter" value="false"/>
+            <list key="filters_list"/>
+            <parameter key="filters_logic_and" value="true"/>
+            <parameter key="filters_check_metadata" value="true"/>
+          </operator>
+          <operator activated="true" class="multiply" compatibility="12.0.005" expanded="true" height="124" name="Split Current Quarter" width="90" x="190" y="120"/>
+          <operator activated="true" class="filter_examples" compatibility="12.0.005" expanded="true" height="103" name="Keep PQ Train Rows" width="90" x="350" y="40">
+            <parameter key="parameter_string" value="pq_role = train"/>
+            <parameter key="parameter_expression" value=""/>
+            <parameter key="condition_class" value="attribute_value_filter"/>
+            <parameter key="invert_filter" value="false"/>
+            <list key="filters_list"/>
+            <parameter key="filters_logic_and" value="true"/>
+            <parameter key="filters_check_metadata" value="true"/>
+          </operator>
+          <operator activated="true" class="multiply" compatibility="12.0.005" expanded="true" height="124" name="Split PQ Train Members" width="90" x="510" y="40"/>
+          <operator activated="true" class="blending:select_attributes" compatibility="12.0.005" expanded="true" height="82" name="Select PQ006 258 Features" width="90" x="670" y="10">
+            <parameter key="type" value="include attributes"/>
+            <parameter key="attribute_filter_type" value="a subset"/>
+            <parameter key="select_attribute" value=""/>
+            <parameter key="select_subset" value="␞credit_funding_growth_gap␞customer_deposits_million_vnd␞customer_deposits_million_vnd__qoq_change␞customer_deposits_million_vnd__qoq_pct␞customer_deposits_million_vnd__yoy_change␞customer_deposits_million_vnd__yoy_pct␞customer_loans_million_vnd␞customer_loans_million_vnd__qoq_change␞customer_loans_million_vnd__qoq_pct␞customer_loans_million_vnd__yoy_change␞customer_loans_million_vnd__yoy_pct␞deposit_growth_yoy␞deposits_to_assets␞deposits_to_assets__qoq_change␞deposits_to_assets__yoy_change␞equity_million_vnd␞equity_million_vnd__qoq_change␞equity_million_vnd__qoq_pct␞equity_million_vnd__yoy_change␞equity_million_vnd__yoy_pct␞equity_to_assets␞equity_to_assets__qoq_change␞equity_to_assets__yoy_change␞loan_growth_yoy␞loan_to_assets␞loan_to_assets__qoq_change␞loan_to_assets__yoy_change␞loan_to_deposit␞loan_to_deposit__qoq_change␞loan_to_deposit__yoy_change␞net_income_million_vnd␞net_income_million_vnd__qoq_change␞net_income_million_vnd__qoq_pct␞net_income_million_vnd__yoy_change␞net_income_million_vnd__yoy_pct␞net_income_to_equity␞net_income_to_equity__qoq_change␞net_income_to_equity__yoy_change␞net_interest_income_million_vnd␞net_interest_income_million_vnd__qoq_change␞net_interest_income_million_vnd__qoq_pct␞net_interest_income_million_vnd__yoy_change␞net_interest_income_million_vnd__yoy_pct␞net_interest_to_assets␞net_interest_to_assets__qoq_change␞net_interest_to_assets__yoy_change␞operating_profit_before_provision_million_vnd␞operating_profit_before_provision_million_vnd__qoq_change␞operating_profit_before_provision_million_vnd__qoq_pct␞operating_profit_before_provision_million_vnd__yoy_change␞operating_profit_before_provision_million_vnd__yoy_pct␞provision_expense_million_vnd␞provision_expense_million_vnd__qoq_change␞provision_expense_million_vnd__qoq_pct␞provision_expense_million_vnd__yoy_change␞provision_expense_million_vnd__yoy_pct␞provision_to_preprovision_profit␞provision_to_preprovision_profit__qoq_change␞provision_to_preprovision_profit__yoy_change␞roe_pct␞roe_pct__qoq_change␞roe_pct__yoy_change␞total_assets_million_vnd␞total_assets_million_vnd__qoq_change␞total_assets_million_vnd__qoq_pct␞total_assets_million_vnd__yoy_change␞total_assets_million_vnd__yoy_pct␞traj__net_income__yoy_pct__lag1␞traj__net_income__yoy_pct__lag2␞traj__net_income__yoy_pct__delta1␞traj__net_income__yoy_pct__acceleration␞traj__net_income__yoy_pct__slope3␞traj__net_income__yoy_pct__slope4␞traj__net_income__yoy_pct__mean4␞traj__net_income__yoy_pct__std4␞traj__net_income__yoy_pct__range4␞traj__net_interest_income__yoy_pct__lag1␞traj__net_interest_income__yoy_pct__lag2␞traj__net_interest_income__yoy_pct__delta1␞traj__net_interest_income__yoy_pct__acceleration␞traj__net_interest_income__yoy_pct__slope3␞traj__net_interest_income__yoy_pct__slope4␞traj__net_interest_income__yoy_pct__mean4␞traj__net_interest_income__yoy_pct__std4␞traj__net_interest_income__yoy_pct__range4␞traj__operating_profit_before_provision__yoy_pct__lag1␞traj__operating_profit_before_provision__yoy_pct__lag2␞traj__operating_profit_before_provision__yoy_pct__delta1␞traj__operating_profit_before_provision__yoy_pct__acceleration␞traj__operating_profit_before_provision__yoy_pct__slope3␞traj__operating_profit_before_provision__yoy_pct__slope4␞traj__operating_profit_before_provision__yoy_pct__mean4␞traj__operating_profit_before_provision__yoy_pct__std4␞traj__operating_profit_before_provision__yoy_pct__range4␞traj__provision_expense__yoy_pct__lag1␞traj__provision_expense__yoy_pct__lag2␞traj__provision_expense__yoy_pct__delta1␞traj__provision_expense__yoy_pct__acceleration␞traj__provision_expense__yoy_pct__slope3␞traj__provision_expense__yoy_pct__slope4␞traj__provision_expense__yoy_pct__mean4␞traj__provision_expense__yoy_pct__std4␞traj__provision_expense__yoy_pct__range4␞traj__roe_pct__lag1␞traj__roe_pct__lag2␞traj__roe_pct__delta1␞traj__roe_pct__acceleration␞traj__roe_pct__slope3␞traj__roe_pct__slope4␞traj__roe_pct__mean4␞traj__roe_pct__std4␞traj__roe_pct__range4␞traj__net_income_to_equity__lag1␞traj__net_income_to_equity__lag2␞traj__net_income_to_equity__delta1␞traj__net_income_to_equity__acceleration␞traj__net_income_to_equity__slope3␞traj__net_income_to_equity__slope4␞traj__net_income_to_equity__mean4␞traj__net_income_to_equity__std4␞traj__net_income_to_equity__range4␞traj__net_interest_to_assets__lag1␞traj__net_interest_to_assets__lag2␞traj__net_interest_to_assets__delta1␞traj__net_interest_to_assets__acceleration␞traj__net_interest_to_assets__slope3␞traj__net_interest_to_assets__slope4␞traj__net_interest_to_assets__mean4␞traj__net_interest_to_assets__std4␞traj__net_interest_to_assets__range4␞traj__provision_to_preprovision_profit__lag1␞traj__provision_to_preprovision_profit__lag2␞traj__provision_to_preprovision_profit__delta1␞traj__provision_to_preprovision_profit__acceleration␞traj__provision_to_preprovision_profit__slope3␞traj__provision_to_preprovision_profit__slope4␞traj__provision_to_preprovision_profit__mean4␞traj__provision_to_preprovision_profit__std4␞traj__provision_to_preprovision_profit__range4␞traj__loan_growth_yoy__lag1␞traj__loan_growth_yoy__lag2␞traj__loan_growth_yoy__delta1␞traj__loan_growth_yoy__acceleration␞traj__loan_growth_yoy__slope3␞traj__loan_growth_yoy__slope4␞traj__loan_growth_yoy__mean4␞traj__loan_growth_yoy__std4␞traj__loan_growth_yoy__range4␞traj__deposit_growth_yoy__lag1␞traj__deposit_growth_yoy__lag2␞traj__deposit_growth_yoy__delta1␞traj__deposit_growth_yoy__acceleration␞traj__deposit_growth_yoy__slope3␞traj__deposit_growth_yoy__slope4␞traj__deposit_growth_yoy__mean4␞traj__deposit_growth_yoy__std4␞traj__deposit_growth_yoy__range4␞traj__credit_funding_growth_gap__lag1␞traj__credit_funding_growth_gap__lag2␞traj__credit_funding_growth_gap__delta1␞traj__credit_funding_growth_gap__acceleration␞traj__credit_funding_growth_gap__slope3␞traj__credit_funding_growth_gap__slope4␞traj__credit_funding_growth_gap__mean4␞traj__credit_funding_growth_gap__std4␞traj__credit_funding_growth_gap__range4␞traj__loan_to_deposit__lag1␞traj__loan_to_deposit__lag2␞traj__loan_to_deposit__delta1␞traj__loan_to_deposit__acceleration␞traj__loan_to_deposit__slope3␞traj__loan_to_deposit__slope4␞traj__loan_to_deposit__mean4␞traj__loan_to_deposit__std4␞traj__loan_to_deposit__range4␞traj__current_deterioration_10pct␞traj__current_deterioration_20pct␞traj__deterioration_count4␞traj__deterioration_rate8␞traj__deterioration_streak␞ctx__bank_count␞ctx__net_income__yoy_pct__median␞ctx__net_income__yoy_pct__std␞ctx__net_income__yoy_pct__negative_rate␞ctx__net_interest_income__yoy_pct__median␞ctx__net_interest_income__yoy_pct__std␞ctx__net_interest_income__yoy_pct__negative_rate␞ctx__operating_profit_before_provision__yoy_pct__median␞ctx__operating_profit_before_provision__yoy_pct__std␞ctx__operating_profit_before_provision__yoy_pct__negative_rate␞ctx__roe_pct__median␞ctx__roe_pct__std␞ctx__roe_pct__negative_rate␞ctx__provision_to_preprovision_profit__median␞ctx__provision_to_preprovision_profit__std␞ctx__provision_to_preprovision_profit__negative_rate␞ctx__loan_growth_yoy__median␞ctx__loan_growth_yoy__std␞ctx__loan_growth_yoy__negative_rate␞ctx__deposit_growth_yoy__median␞ctx__deposit_growth_yoy__std␞ctx__deposit_growth_yoy__negative_rate␞ctx__credit_funding_growth_gap__median␞ctx__credit_funding_growth_gap__std␞ctx__credit_funding_growth_gap__negative_rate␞ctx__current_deterioration_rate␞ctx__current_severe_deterioration_rate␞outlier__net_income__yoy_pct__robust_z␞outlier__net_income__yoy_pct__flag␞outlier__net_interest_income__yoy_pct__robust_z␞outlier__net_interest_income__yoy_pct__flag␞outlier__operating_profit_before_provision__yoy_pct__robust_z␞outlier__operating_profit_before_provision__yoy_pct__flag␞outlier__provision_expense__yoy_pct__robust_z␞outlier__provision_expense__yoy_pct__flag␞outlier__roe_pct__robust_z␞outlier__roe_pct__flag␞outlier__net_income_to_equity__robust_z␞outlier__net_income_to_equity__flag␞outlier__net_interest_to_assets__robust_z␞outlier__net_interest_to_assets__flag␞outlier__provision_to_preprovision_profit__robust_z␞outlier__provision_to_preprovision_profit__flag␞outlier__loan_growth_yoy__robust_z␞outlier__loan_growth_yoy__flag␞outlier__deposit_growth_yoy__robust_z␞outlier__deposit_growth_yoy__flag␞outlier__credit_funding_growth_gap__robust_z␞outlier__credit_funding_growth_gap__flag␞outlier__loan_to_deposit__robust_z␞outlier__loan_to_deposit__flag␞outlier__flag_count␞ticker__ABB␞ticker__ACB␞ticker__BAB␞ticker__BID␞ticker__BVB␞ticker__CTG␞ticker__EIB␞ticker__HDB␞ticker__KLB␞ticker__LPB␞ticker__MBB␞ticker__MSB␞ticker__NAB␞ticker__NVB␞ticker__OCB␞ticker__PGB␞ticker__SGB␞ticker__SHB␞ticker__SSB␞ticker__STB␞ticker__TCB␞ticker__TPB␞ticker__VAB␞ticker__VCB␞ticker__VIB␞ticker__VPB␞risk10_label␞pq_sample_weight"/>
+            <parameter key="also_apply_to_special_attributes_(id,_label..)" value="true"/>
+          </operator>
+          <operator activated="true" class="blending:set_role" compatibility="12.0.005" expanded="true" height="82" name="Set PQ006 Label Weight" width="90" x="830" y="10">
+            <list key="set_roles">
+              <parameter key="risk10_label" value="label"/>
+              <parameter key="pq_sample_weight" value="weight"/>
+            </list>
+          </operator>
+          <operator activated="true" class="h2o:gradient_boosted_trees" compatibility="11.0.002" expanded="true" height="103" name="PQ006 H2O GBT" width="90" x="990" y="10">
+            <parameter key="number_of_trees" value="300"/>
+            <parameter key="reproducible" value="true"/>
+            <parameter key="maximum_number_of_threads" value="1"/>
+            <parameter key="use_local_random_seed" value="true"/>
+            <parameter key="local_random_seed" value="20260618"/>
+            <parameter key="maximal_depth" value="2"/>
+            <parameter key="min_rows" value="10"/>
+            <parameter key="min_split_improvement" value="0.0"/>
+            <parameter key="number_of_bins" value="128"/>
+            <parameter key="learning_rate" value="0.04"/>
+            <parameter key="sample_rate" value="0.8"/>
+            <parameter key="distribution" value="bernoulli"/>
+            <parameter key="early_stopping" value="false"/>
+            <parameter key="stopping_rounds" value="1"/>
+            <parameter key="stopping_metric" value="AUTO"/>
+            <parameter key="stopping_tolerance" value="0.001"/>
+            <list key="monotone_constraints"/>
+            <parameter key="max_runtime_seconds" value="0"/>
+            <list key="expert_parameters">
+              <parameter key="col_sample_rate" value="0.7"/>
+              <parameter key="col_sample_rate_per_tree" value="0.7"/>
+            </list>
+          </operator>
+          <operator activated="true" class="blending:select_attributes" compatibility="12.0.005" expanded="true" height="82" name="Select PQ012 309 Features" width="90" x="670" y="145">
+            <parameter key="type" value="include attributes"/>
+            <parameter key="attribute_filter_type" value="a subset"/>
+            <parameter key="select_attribute" value=""/>
+            <parameter key="select_subset" value="␞net_income_million_vnd__yoy_pct␞net_income_million_vnd__yoy_change␞net_interest_income_million_vnd__yoy_pct␞net_interest_income_million_vnd__yoy_change␞operating_profit_before_provision_million_vnd__yoy_pct␞operating_profit_before_provision_million_vnd__yoy_change␞provision_expense_million_vnd__yoy_pct␞roe_pct␞roe_pct__yoy_change␞net_income_to_equity␞net_interest_to_assets␞provision_to_preprovision_profit␞loan_growth_yoy␞deposit_growth_yoy␞credit_funding_growth_gap␞loan_to_deposit␞loan_to_deposit__yoy_change␞customer_loans_million_vnd__yoy_pct␞customer_deposits_million_vnd__yoy_pct␞traj__net_income__yoy_pct__lag1␞traj__net_income__yoy_pct__lag2␞traj__net_income__yoy_pct__delta1␞traj__net_income__yoy_pct__acceleration␞traj__net_income__yoy_pct__slope3␞traj__net_income__yoy_pct__slope4␞traj__net_income__yoy_pct__mean4␞traj__net_income__yoy_pct__std4␞traj__net_income__yoy_pct__range4␞traj__net_interest_income__yoy_pct__lag1␞traj__net_interest_income__yoy_pct__lag2␞traj__net_interest_income__yoy_pct__delta1␞traj__net_interest_income__yoy_pct__acceleration␞traj__net_interest_income__yoy_pct__slope3␞traj__net_interest_income__yoy_pct__slope4␞traj__net_interest_income__yoy_pct__mean4␞traj__net_interest_income__yoy_pct__std4␞traj__net_interest_income__yoy_pct__range4␞traj__operating_profit_before_provision__yoy_pct__lag1␞traj__operating_profit_before_provision__yoy_pct__lag2␞traj__operating_profit_before_provision__yoy_pct__delta1␞traj__operating_profit_before_provision__yoy_pct__acceleration␞traj__operating_profit_before_provision__yoy_pct__slope3␞traj__operating_profit_before_provision__yoy_pct__slope4␞traj__operating_profit_before_provision__yoy_pct__mean4␞traj__operating_profit_before_provision__yoy_pct__std4␞traj__operating_profit_before_provision__yoy_pct__range4␞traj__provision_expense__yoy_pct__lag1␞traj__provision_expense__yoy_pct__lag2␞traj__provision_expense__yoy_pct__delta1␞traj__provision_expense__yoy_pct__acceleration␞traj__provision_expense__yoy_pct__slope3␞traj__provision_expense__yoy_pct__slope4␞traj__provision_expense__yoy_pct__mean4␞traj__provision_expense__yoy_pct__std4␞traj__provision_expense__yoy_pct__range4␞traj__roe_pct__lag1␞traj__roe_pct__lag2␞traj__roe_pct__delta1␞traj__roe_pct__acceleration␞traj__roe_pct__slope3␞traj__roe_pct__slope4␞traj__roe_pct__mean4␞traj__roe_pct__std4␞traj__roe_pct__range4␞traj__net_income_to_equity__lag1␞traj__net_income_to_equity__lag2␞traj__net_income_to_equity__delta1␞traj__net_income_to_equity__acceleration␞traj__net_income_to_equity__slope3␞traj__net_income_to_equity__slope4␞traj__net_income_to_equity__mean4␞traj__net_income_to_equity__std4␞traj__net_income_to_equity__range4␞traj__net_interest_to_assets__lag1␞traj__net_interest_to_assets__lag2␞traj__net_interest_to_assets__delta1␞traj__net_interest_to_assets__acceleration␞traj__net_interest_to_assets__slope3␞traj__net_interest_to_assets__slope4␞traj__net_interest_to_assets__mean4␞traj__net_interest_to_assets__std4␞traj__net_interest_to_assets__range4␞traj__provision_to_preprovision_profit__lag1␞traj__provision_to_preprovision_profit__lag2␞traj__provision_to_preprovision_profit__delta1␞traj__provision_to_preprovision_profit__acceleration␞traj__provision_to_preprovision_profit__slope3␞traj__provision_to_preprovision_profit__slope4␞traj__provision_to_preprovision_profit__mean4␞traj__provision_to_preprovision_profit__std4␞traj__provision_to_preprovision_profit__range4␞traj__loan_growth_yoy__lag1␞traj__loan_growth_yoy__lag2␞traj__loan_growth_yoy__delta1␞traj__loan_growth_yoy__acceleration␞traj__loan_growth_yoy__slope3␞traj__loan_growth_yoy__slope4␞traj__loan_growth_yoy__mean4␞traj__loan_growth_yoy__std4␞traj__loan_growth_yoy__range4␞traj__deposit_growth_yoy__lag1␞traj__deposit_growth_yoy__lag2␞traj__deposit_growth_yoy__delta1␞traj__deposit_growth_yoy__acceleration␞traj__deposit_growth_yoy__slope3␞traj__deposit_growth_yoy__slope4␞traj__deposit_growth_yoy__mean4␞traj__deposit_growth_yoy__std4␞traj__deposit_growth_yoy__range4␞traj__credit_funding_growth_gap__lag1␞traj__credit_funding_growth_gap__lag2␞traj__credit_funding_growth_gap__delta1␞traj__credit_funding_growth_gap__acceleration␞traj__credit_funding_growth_gap__slope3␞traj__credit_funding_growth_gap__slope4␞traj__credit_funding_growth_gap__mean4␞traj__credit_funding_growth_gap__std4␞traj__credit_funding_growth_gap__range4␞traj__loan_to_deposit__lag1␞traj__loan_to_deposit__lag2␞traj__loan_to_deposit__delta1␞traj__loan_to_deposit__acceleration␞traj__loan_to_deposit__slope3␞traj__loan_to_deposit__slope4␞traj__loan_to_deposit__mean4␞traj__loan_to_deposit__std4␞traj__loan_to_deposit__range4␞traj__current_deterioration_10pct␞traj__current_deterioration_20pct␞traj__deterioration_count4␞traj__deterioration_rate8␞traj__deterioration_streak␞ctx__bank_count␞ctx__net_income__yoy_pct__median␞ctx__net_income__yoy_pct__std␞ctx__net_income__yoy_pct__negative_rate␞ctx__net_interest_income__yoy_pct__median␞ctx__net_interest_income__yoy_pct__std␞ctx__net_interest_income__yoy_pct__negative_rate␞ctx__operating_profit_before_provision__yoy_pct__median␞ctx__operating_profit_before_provision__yoy_pct__std␞ctx__operating_profit_before_provision__yoy_pct__negative_rate␞ctx__roe_pct__median␞ctx__roe_pct__std␞ctx__roe_pct__negative_rate␞ctx__provision_to_preprovision_profit__median␞ctx__provision_to_preprovision_profit__std␞ctx__provision_to_preprovision_profit__negative_rate␞ctx__loan_growth_yoy__median␞ctx__loan_growth_yoy__std␞ctx__loan_growth_yoy__negative_rate␞ctx__deposit_growth_yoy__median␞ctx__deposit_growth_yoy__std␞ctx__deposit_growth_yoy__negative_rate␞ctx__credit_funding_growth_gap__median␞ctx__credit_funding_growth_gap__std␞ctx__credit_funding_growth_gap__negative_rate␞ctx__current_deterioration_rate␞ctx__current_severe_deterioration_rate␞outlier__net_income__yoy_pct__robust_z␞outlier__net_income__yoy_pct__flag␞outlier__net_interest_income__yoy_pct__robust_z␞outlier__net_interest_income__yoy_pct__flag␞outlier__operating_profit_before_provision__yoy_pct__robust_z␞outlier__operating_profit_before_provision__yoy_pct__flag␞outlier__provision_expense__yoy_pct__robust_z␞outlier__provision_expense__yoy_pct__flag␞outlier__roe_pct__robust_z␞outlier__roe_pct__flag␞outlier__net_income_to_equity__robust_z␞outlier__net_income_to_equity__flag␞outlier__net_interest_to_assets__robust_z␞outlier__net_interest_to_assets__flag␞outlier__provision_to_preprovision_profit__robust_z␞outlier__provision_to_preprovision_profit__flag␞outlier__loan_growth_yoy__robust_z␞outlier__loan_growth_yoy__flag␞outlier__deposit_growth_yoy__robust_z␞outlier__deposit_growth_yoy__flag␞outlier__credit_funding_growth_gap__robust_z␞outlier__credit_funding_growth_gap__flag␞outlier__loan_to_deposit__robust_z␞outlier__loan_to_deposit__flag␞outlier__flag_count␞rn__reportnorm_4310__assets_ratio␞rn__reportnorm_4310__ratio_mean4␞rn__reportnorm_4310__ratio_std4␞rn__reportnorm_4311__assets_ratio␞rn__reportnorm_4311__ratio_mean4␞rn__reportnorm_4311__ratio_std4␞rn__reportnorm_4312__assets_ratio␞rn__reportnorm_4312__ratio_mean4␞rn__reportnorm_4312__ratio_std4␞rn__reportnorm_4313__assets_ratio␞rn__reportnorm_4313__ratio_mean4␞rn__reportnorm_4313__ratio_std4␞rn__reportnorm_4318__assets_ratio␞rn__reportnorm_4318__ratio_mean4␞rn__reportnorm_4318__ratio_std4␞rn__reportnorm_4319__assets_ratio␞rn__reportnorm_4319__ratio_mean4␞rn__reportnorm_4319__ratio_std4␞rn__reportnorm_4321__assets_ratio␞rn__reportnorm_4321__ratio_mean4␞rn__reportnorm_4321__ratio_std4␞rn__reportnorm_4322__assets_ratio␞rn__reportnorm_4322__ratio_mean4␞rn__reportnorm_4322__ratio_std4␞rn__reportnorm_4323__assets_ratio␞rn__reportnorm_4323__ratio_mean4␞rn__reportnorm_4323__ratio_std4␞rn__reportnorm_4324__assets_ratio␞rn__reportnorm_4324__ratio_mean4␞rn__reportnorm_4324__ratio_std4␞rn__reportnorm_4310__qoq_pct␞rn__reportnorm_4310__yoy_pct␞rn__reportnorm_4311__qoq_pct␞rn__reportnorm_4311__yoy_pct␞rn__reportnorm_4312__qoq_pct␞rn__reportnorm_4312__yoy_pct␞rn__reportnorm_4313__qoq_pct␞rn__reportnorm_4313__yoy_pct␞rn__reportnorm_4318__qoq_pct␞rn__reportnorm_4318__yoy_pct␞rn__reportnorm_4319__qoq_pct␞rn__reportnorm_4319__yoy_pct␞rn__reportnorm_4321__qoq_pct␞rn__reportnorm_4321__yoy_pct␞rn__reportnorm_4322__qoq_pct␞rn__reportnorm_4322__yoy_pct␞rn__reportnorm_4323__qoq_pct␞rn__reportnorm_4323__yoy_pct␞rn__reportnorm_4324__qoq_pct␞rn__reportnorm_4324__yoy_pct␞rn__reportnorm_4310__quarter_rank␞rn__reportnorm_4311__quarter_rank␞rn__reportnorm_4312__quarter_rank␞rn__reportnorm_4313__quarter_rank␞rn__reportnorm_4318__quarter_rank␞rn__reportnorm_4319__quarter_rank␞rn__reportnorm_4321__quarter_rank␞rn__reportnorm_4322__quarter_rank␞rn__reportnorm_4323__quarter_rank␞rn__reportnorm_4324__quarter_rank␞rn__reportnorm_4310__missing␞rn__reportnorm_4311__missing␞rn__reportnorm_4312__missing␞rn__reportnorm_4313__missing␞rn__reportnorm_4318__missing␞rn__reportnorm_4319__missing␞rn__reportnorm_4321__missing␞rn__reportnorm_4322__missing␞rn__reportnorm_4323__missing␞rn__reportnorm_4324__missing␞rn__current_ratio␞rn__liquid_to_assets␞rn__short_liability_to_assets␞rn__coverage␞rn__liquid_sum__qoq_pct␞rn__liquid_sum__yoy_pct␞rn__liquid_sum__quarter_rank␞rn__short_liability_sum__qoq_pct␞rn__short_liability_sum__yoy_pct␞rn__short_liability_sum__quarter_rank␞rn__current_ratio__qoq_pct␞rn__current_ratio__yoy_pct␞rn__current_ratio__quarter_rank␞rn__current_ratio__mean4␞rn__current_ratio__std4␞rn__liquid_to_assets__qoq_pct␞rn__liquid_to_assets__yoy_pct␞rn__liquid_to_assets__quarter_rank␞rn__liquid_to_assets__mean4␞rn__liquid_to_assets__std4␞rn__short_liability_to_assets__qoq_pct␞rn__short_liability_to_assets__yoy_pct␞rn__short_liability_to_assets__quarter_rank␞rn__short_liability_to_assets__mean4␞rn__short_liability_to_assets__std4␞rnctx__current_ratio_median␞rnctx__current_ratio_std␞rnctx__liquid_to_assets_median␞rnctx__short_liability_to_assets_median␞ticker__ABB␞ticker__ACB␞ticker__BAB␞ticker__BID␞ticker__BVB␞ticker__CTG␞ticker__EIB␞ticker__HDB␞ticker__KLB␞ticker__LPB␞ticker__MBB␞ticker__MSB␞ticker__NAB␞ticker__NVB␞ticker__OCB␞ticker__PGB␞ticker__SGB␞ticker__SHB␞ticker__SSB␞ticker__STB␞ticker__TCB␞ticker__TPB␞ticker__VAB␞ticker__VCB␞ticker__VIB␞ticker__VPB␞risk10_label␞pq_sample_weight"/>
+            <parameter key="also_apply_to_special_attributes_(id,_label..)" value="true"/>
+          </operator>
+          <operator activated="true" class="blending:set_role" compatibility="12.0.005" expanded="true" height="82" name="Set PQ012 Label Weight" width="90" x="830" y="145">
+            <list key="set_roles">
+              <parameter key="risk10_label" value="label"/>
+              <parameter key="pq_sample_weight" value="weight"/>
+            </list>
+          </operator>
+          <operator activated="true" class="h2o:gradient_boosted_trees" compatibility="11.0.002" expanded="true" height="103" name="PQ012 H2O GBT" width="90" x="990" y="145">
+            <parameter key="number_of_trees" value="300"/>
+            <parameter key="reproducible" value="true"/>
+            <parameter key="maximum_number_of_threads" value="1"/>
+            <parameter key="use_local_random_seed" value="true"/>
+            <parameter key="local_random_seed" value="20260618"/>
+            <parameter key="maximal_depth" value="2"/>
+            <parameter key="min_rows" value="10"/>
+            <parameter key="min_split_improvement" value="0.0"/>
+            <parameter key="number_of_bins" value="128"/>
+            <parameter key="learning_rate" value="0.04"/>
+            <parameter key="sample_rate" value="0.8"/>
+            <parameter key="distribution" value="bernoulli"/>
+            <parameter key="early_stopping" value="false"/>
+            <parameter key="stopping_rounds" value="1"/>
+            <parameter key="stopping_metric" value="AUTO"/>
+            <parameter key="stopping_tolerance" value="0.001"/>
+            <list key="monotone_constraints"/>
+            <parameter key="max_runtime_seconds" value="0"/>
+            <list key="expert_parameters">
+              <parameter key="col_sample_rate" value="0.7"/>
+              <parameter key="col_sample_rate_per_tree" value="0.7"/>
+            </list>
+          </operator>
+          <operator activated="true" class="filter_examples" compatibility="12.0.005" expanded="true" height="103" name="Keep PQ Score Rows" width="90" x="350" y="300">
+            <parameter key="parameter_string" value="pq_role = score"/>
+            <parameter key="parameter_expression" value=""/>
+            <parameter key="condition_class" value="attribute_value_filter"/>
+            <parameter key="invert_filter" value="false"/>
+            <list key="filters_list"/>
+            <parameter key="filters_logic_and" value="true"/>
+            <parameter key="filters_check_metadata" value="true"/>
+          </operator>
+          <operator activated="true" class="blending:set_role" compatibility="12.0.005" expanded="true" height="82" name="Set PQ Score Label ID" width="90" x="510" y="300">
+            <list key="set_roles">
+              <parameter key="risk10_label" value="label"/>
+              <parameter key="row_key" value="id"/>
+            </list>
+          </operator>
+          <operator activated="true" class="multiply" compatibility="12.0.005" expanded="true" height="103" name="Split PQ Score Members" width="90" x="670" y="300"/>
+          <operator activated="true" class="apply_model" compatibility="12.0.005" expanded="true" height="82" name="Apply PQ006" width="90" x="1160" y="255">
+            <list key="application_parameters"/>
+          </operator>
+          <operator activated="true" class="rename" compatibility="12.0.005" expanded="true" height="82" name="Rename PQ006 Risk Confidence" width="90" x="1310" y="255">
+            <parameter key="old_name" value="confidence(Risk)"/>
+            <parameter key="new_name" value="probability_pq006"/>
+            <list key="rename_additional_attributes"/>
+          </operator>
+          <operator activated="true" class="blending:set_role" compatibility="12.0.005" expanded="true" height="82" name="Make PQ006 Probability Regular" width="90" x="1420" y="255">
+            <list key="set_roles">
+              <parameter key="probability_pq006" value="regular"/>
+            </list>
+          </operator>
+          <operator activated="true" class="blending:select_attributes" compatibility="12.0.005" expanded="true" height="82" name="Keep PQ006 Score" width="90" x="1550" y="255">
+            <parameter key="type" value="include attributes"/>
+            <parameter key="attribute_filter_type" value="a subset"/>
+            <parameter key="select_attribute" value=""/>
+            <parameter key="select_subset" value="␞row_key␞risk10_label␞probability_pq006"/>
+            <parameter key="also_apply_to_special_attributes_(id,_label..)" value="true"/>
+          </operator>
+          <operator activated="true" class="apply_model" compatibility="12.0.005" expanded="true" height="82" name="Apply PQ012" width="90" x="1160" y="390">
+            <list key="application_parameters"/>
+          </operator>
+          <operator activated="true" class="rename" compatibility="12.0.005" expanded="true" height="82" name="Rename PQ012 Risk Confidence" width="90" x="1310" y="390">
+            <parameter key="old_name" value="confidence(Risk)"/>
+            <parameter key="new_name" value="probability_pq012"/>
+            <list key="rename_additional_attributes"/>
+          </operator>
+          <operator activated="true" class="blending:set_role" compatibility="12.0.005" expanded="true" height="82" name="Make PQ012 Probability Regular" width="90" x="1420" y="390">
+            <list key="set_roles">
+              <parameter key="probability_pq012" value="regular"/>
+            </list>
+          </operator>
+          <operator activated="true" class="blending:select_attributes" compatibility="12.0.005" expanded="true" height="82" name="Keep PQ012 Score" width="90" x="1550" y="390">
+            <parameter key="type" value="include attributes"/>
+            <parameter key="attribute_filter_type" value="a subset"/>
+            <parameter key="select_attribute" value=""/>
+            <parameter key="select_subset" value="␞row_key␞risk10_label␞probability_pq012"/>
+            <parameter key="also_apply_to_special_attributes_(id,_label..)" value="true"/>
+          </operator>
+          <operator activated="true" class="join" compatibility="12.0.005" expanded="true" height="82" name="Join PQ006 PQ012 By Row Key" width="90" x="1700" y="320">
+            <parameter key="remove_double_attributes" value="true"/>
+            <parameter key="join_type" value="inner"/>
+            <parameter key="use_id_attribute_as_key" value="true"/>
+            <list key="key_attributes"/>
+            <parameter key="keep_both_join_attributes" value="false"/>
+          </operator>
+          <operator activated="true" class="generate_attributes" compatibility="12.0.005" expanded="true" height="82" name="PQ087 75 25 And Threshold" width="90" x="1850" y="320">
+            <list key="function_descriptions">
+              <parameter key="ensemble_probability" value="0.75 * probability_pq006 + 0.25 * probability_pq012"/>
+              <parameter key="prediction_pq087" value="if(ensemble_probability &gt;= 0.3210824176669121, &quot;Risk&quot;, &quot;NoRisk&quot;)"/>
+            </list>
+            <parameter key="keep_all" value="true"/>
+          </operator>
+          <operator activated="true" class="blending:set_role" compatibility="12.0.005" expanded="true" height="82" name="Set PQ087 Prediction Role" width="90" x="2000" y="320">
+            <list key="set_roles">
+              <parameter key="risk10_label" value="label"/>
+              <parameter key="prediction_pq087" value="prediction"/>
+            </list>
+          </operator>
+          <connect from_port="input 1" to_op="Filter Current Evaluation Quarter" to_port="example set input"/>
+          <connect from_op="Filter Current Evaluation Quarter" from_port="example set output" to_op="Split Current Quarter" to_port="input"/>
+          <connect from_op="Split Current Quarter" from_port="output 1" to_op="Keep PQ Train Rows" to_port="example set input"/>
+          <connect from_op="Split Current Quarter" from_port="output 2" to_op="Keep PQ Score Rows" to_port="example set input"/>
+          <connect from_op="Keep PQ Train Rows" from_port="example set output" to_op="Split PQ Train Members" to_port="input"/>
+          <connect from_op="Split PQ Train Members" from_port="output 1" to_op="Select PQ006 258 Features" to_port="example set input"/>
+          <connect from_op="Split PQ Train Members" from_port="output 2" to_op="Select PQ012 309 Features" to_port="example set input"/>
+          <connect from_op="Select PQ006 258 Features" from_port="example set output" to_op="Set PQ006 Label Weight" to_port="example set input"/>
+          <connect from_op="Set PQ006 Label Weight" from_port="example set output" to_op="PQ006 H2O GBT" to_port="training set"/>
+          <connect from_op="PQ006 H2O GBT" from_port="model" to_op="Apply PQ006" to_port="model"/>
+          <connect from_op="Select PQ012 309 Features" from_port="example set output" to_op="Set PQ012 Label Weight" to_port="example set input"/>
+          <connect from_op="Set PQ012 Label Weight" from_port="example set output" to_op="PQ012 H2O GBT" to_port="training set"/>
+          <connect from_op="PQ012 H2O GBT" from_port="model" to_op="Apply PQ012" to_port="model"/>
+          <connect from_op="Keep PQ Score Rows" from_port="example set output" to_op="Set PQ Score Label ID" to_port="example set input"/>
+          <connect from_op="Set PQ Score Label ID" from_port="example set output" to_op="Split PQ Score Members" to_port="input"/>
+          <connect from_op="Split PQ Score Members" from_port="output 1" to_op="Apply PQ006" to_port="unlabelled data"/>
+          <connect from_op="Split PQ Score Members" from_port="output 2" to_op="Apply PQ012" to_port="unlabelled data"/>
+          <connect from_op="Apply PQ006" from_port="labelled data" to_op="Rename PQ006 Risk Confidence" to_port="example set input"/>
+          <connect from_op="Rename PQ006 Risk Confidence" from_port="example set output" to_op="Make PQ006 Probability Regular" to_port="example set input"/>
+          <connect from_op="Make PQ006 Probability Regular" from_port="example set output" to_op="Keep PQ006 Score" to_port="example set input"/>
+          <connect from_op="Keep PQ006 Score" from_port="example set output" to_op="Join PQ006 PQ012 By Row Key" to_port="left"/>
+          <connect from_op="Apply PQ012" from_port="labelled data" to_op="Rename PQ012 Risk Confidence" to_port="example set input"/>
+          <connect from_op="Rename PQ012 Risk Confidence" from_port="example set output" to_op="Make PQ012 Probability Regular" to_port="example set input"/>
+          <connect from_op="Make PQ012 Probability Regular" from_port="example set output" to_op="Keep PQ012 Score" to_port="example set input"/>
+          <connect from_op="Keep PQ012 Score" from_port="example set output" to_op="Join PQ006 PQ012 By Row Key" to_port="right"/>
+          <connect from_op="Join PQ006 PQ012 By Row Key" from_port="join" to_op="PQ087 75 25 And Threshold" to_port="example set input"/>
+          <connect from_op="PQ087 75 25 And Threshold" from_port="example set output" to_op="Set PQ087 Prediction Role" to_port="example set input"/>
+          <connect from_op="Set PQ087 Prediction Role" from_port="example set output" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="append" compatibility="12.0.005" expanded="true" height="82" name="Append All PQ Quarter Predictions" width="90" x="447" y="85">
+        <parameter key="data_management" value="auto"/>
+        <parameter key="merge_type" value="all"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="12.0.005" expanded="true" height="82" name="Write PQ087 Scored Rows" width="90" x="581" y="80">
+        <parameter key="csv_file" value="C:\Users\Admin\OneDrive\Desktop\PQENS087\workflow whole project\2. Machine Learning\2.8 Results\native_outputs\PQENS087_H2O_validation_scored_rows.csv"/>
+        <parameter key="column_separator" value=","/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="date_format" value="yyyy-MM-dd HH:mm:ss"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="UTF-8"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="12.0.005" expanded="true" height="103" name="Split PQ087 Results" width="90" x="730" y="80"/>
+      <operator activated="true" class="performance_classification" compatibility="12.0.005" expanded="true" height="82" name="Performance PQENS087 Native H2O" width="90" x="900" y="30">
+        <parameter key="main_criterion" value="first"/>
+        <parameter key="accuracy" value="true"/>
+        <parameter key="classification_error" value="true"/>
+        <parameter key="kappa" value="true"/>
+        <parameter key="weighted_mean_recall" value="true"/>
+        <parameter key="weighted_mean_precision" value="true"/>
+        <parameter key="spearman_rho" value="false"/>
+        <parameter key="kendall_tau" value="false"/>
+        <parameter key="absolute_error" value="false"/>
+        <parameter key="relative_error" value="false"/>
+        <parameter key="relative_error_lenient" value="false"/>
+        <parameter key="relative_error_strict" value="false"/>
+        <parameter key="normalized_absolute_error" value="false"/>
+        <parameter key="root_mean_squared_error" value="false"/>
+        <parameter key="root_relative_squared_error" value="false"/>
+        <parameter key="squared_error" value="false"/>
+        <parameter key="correlation" value="false"/>
+        <parameter key="squared_correlation" value="false"/>
+        <parameter key="cross-entropy" value="false"/>
+        <parameter key="margin" value="false"/>
+        <parameter key="soft_margin_loss" value="false"/>
+        <parameter key="logistic_loss" value="false"/>
+        <parameter key="skip_undefined_labels" value="true"/>
+        <parameter key="use_example_weights" value="false"/>
+        <list key="class_weights"/>
+      </operator>
+      <connect from_op="Retrieve pq087_validation_prequential" from_port="output" to_op="Loop Target Quarter" to_port="input 1"/>
+      <connect from_op="Loop Target Quarter" from_port="output 1" to_op="Append All PQ Quarter Predictions" to_port="example set 1"/>
+      <connect from_op="Append All PQ Quarter Predictions" from_port="merged set" to_op="Write PQ087 Scored Rows" to_port="input"/>
+      <connect from_op="Write PQ087 Scored Rows" from_port="through" to_op="Split PQ087 Results" to_port="input"/>
+      <connect from_op="Split PQ087 Results" from_port="output 1" to_op="Performance PQENS087 Native H2O" to_port="labelled data"/>
+      <connect from_op="Split PQ087 Results" from_port="output 2" to_port="result 2"/>
+      <connect from_op="Performance PQENS087 Native H2O" from_port="performance" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+    </process>
+  </operator>
+</process>

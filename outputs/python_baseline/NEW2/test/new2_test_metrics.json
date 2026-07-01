@@ -1,0 +1,51 @@
+{
+  "model": "NEW2",
+  "kind": "test",
+  "task": "prequential binary earnings-risk screening",
+  "python_estimator_note": "XGBoostClassifier approximates RapidMiner/H2O GBT; exact binary identity is not expected.",
+  "threshold": 0.331,
+  "feature_counts": {
+    "member_258": 258,
+    "member_309": 309,
+    "union": 357,
+    "overlap": 210
+  },
+  "input_rows": 8234,
+  "score_rows": 234,
+  "evaluation_quarters": 9,
+  "performance": {
+    "accuracy": 0.8162393162393162,
+    "balanced_accuracy": 0.7006443298969072,
+    "macro_f1": 0.6909230532944248,
+    "per_class": {
+      "Risk": {
+        "precision": 0.4666666666666667,
+        "recall": 0.525,
+        "f1": 0.49411764705882355,
+        "support": 40
+      },
+      "NoRisk": {
+        "precision": 0.8994708994708994,
+        "recall": 0.8762886597938144,
+        "f1": 0.8877284595300261,
+        "support": 194
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Risk",
+        "NoRisk"
+      ],
+      "matrix": [
+        [
+          21,
+          19
+        ],
+        [
+          24,
+          170
+        ]
+      ]
+    }
+  }
+}

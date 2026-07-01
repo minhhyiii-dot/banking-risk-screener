@@ -1,0 +1,417 @@
+{
+  "source_rmp": "code\\Models\\model OLD1 (Decision Tree)\\OLD1.rmp",
+  "operators": [
+    {
+      "index": 1,
+      "name": "Retrieve master cũ",
+      "class": "retrieve",
+      "parameters": {
+        "repository_entry": "master cũ"
+      },
+      "lists": {}
+    },
+    {
+      "index": 2,
+      "name": "Set Role",
+      "class": "blending:set_role",
+      "parameters": {},
+      "lists": {
+        "set_roles": [
+          {
+            "key": "segment_label",
+            "value": "label"
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "name": "Multiply",
+      "class": "multiply",
+      "parameters": {},
+      "lists": {}
+    },
+    {
+      "index": 4,
+      "name": "Test",
+      "class": "filter_examples",
+      "parameters": {
+        "parameter_expression": "",
+        "condition_class": "custom_filters",
+        "invert_filter": "false",
+        "filters_logic_and": "true",
+        "filters_check_metadata": "true"
+      },
+      "lists": {
+        "filters_list": [
+          {
+            "key": "filters_entry_key",
+            "value": "report_year.ge.2024"
+          },
+          {
+            "key": "filters_entry_key",
+            "value": "report_year.le.2025"
+          }
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "name": "Select Attributes (3)",
+      "class": "blending:select_attributes",
+      "parameters": {
+        "type": "include attributes",
+        "attribute_filter_type": "a subset",
+        "select_attribute": "",
+        "select_subset": "␞avg_volume_20d_missing␞book_equity_bn_vnd␞book_equity_missing␞casa_ratio␞casa_ratio_missing␞current_ratio_proxy␞current_ratio_proxy_missing␞customer_deposits_bn_vnd␞customer_loans_bn_vnd␞daily_return_asof␞daily_return_asof_missing␞debt_to_equity␞debt_to_equity_missing␞deposit_growth_yoy␞deposit_growth_yoy_missing␞equity_bn_vnd␞liquidity_score␞listing_date_after_period_flag␞llr␞llr_missing␞loan_growth_yoy␞loan_growth_yoy_missing␞log_market_cap␞log_market_cap_missing␞market_cap_bn_vnd␞market_cap_missing␞net_income_reported_bn_vnd␞net_income_reported_missing␞nim_proxy␞nim_proxy_missing␞npl_ratio␞npl_ratio_missing␞operating_profit_before_provision_bn_vnd␞pb_ratio␞pb_ratio_missing␞prev_year_annual_ocr_missing␞price_momentum_score␞provision_expense_abs_bn_vnd␞ret_3m␞ret_3m_missing␞ret_6m␞ret_6m_missing␞risk_score_basic␞roe_pct␞segment_label␞total_assets_bn_vnd␞trading_history_years␞trading_history_years_missing␞vol_20d␞vol_20d_missing␞years_listed␞years_listed_missing",
+        "also_apply_to_special_attributes_(id,_label..)": "false",
+        "select_subset_count": 52,
+        "select_subset_parsed": [
+          "avg_volume_20d_missing",
+          "book_equity_bn_vnd",
+          "book_equity_missing",
+          "casa_ratio",
+          "casa_ratio_missing",
+          "current_ratio_proxy",
+          "current_ratio_proxy_missing",
+          "customer_deposits_bn_vnd",
+          "customer_loans_bn_vnd",
+          "daily_return_asof",
+          "daily_return_asof_missing",
+          "debt_to_equity",
+          "debt_to_equity_missing",
+          "deposit_growth_yoy",
+          "deposit_growth_yoy_missing",
+          "equity_bn_vnd",
+          "liquidity_score",
+          "listing_date_after_period_flag",
+          "llr",
+          "llr_missing",
+          "loan_growth_yoy",
+          "loan_growth_yoy_missing",
+          "log_market_cap",
+          "log_market_cap_missing",
+          "market_cap_bn_vnd",
+          "market_cap_missing",
+          "net_income_reported_bn_vnd",
+          "net_income_reported_missing",
+          "nim_proxy",
+          "nim_proxy_missing",
+          "npl_ratio",
+          "npl_ratio_missing",
+          "operating_profit_before_provision_bn_vnd",
+          "pb_ratio",
+          "pb_ratio_missing",
+          "prev_year_annual_ocr_missing",
+          "price_momentum_score",
+          "provision_expense_abs_bn_vnd",
+          "ret_3m",
+          "ret_3m_missing",
+          "ret_6m",
+          "ret_6m_missing",
+          "risk_score_basic",
+          "roe_pct",
+          "segment_label",
+          "total_assets_bn_vnd",
+          "trading_history_years",
+          "trading_history_years_missing",
+          "vol_20d",
+          "vol_20d_missing",
+          "years_listed",
+          "years_listed_missing"
+        ]
+      },
+      "lists": {}
+    },
+    {
+      "index": 7,
+      "name": "Validation",
+      "class": "filter_examples",
+      "parameters": {
+        "parameter_expression": "",
+        "condition_class": "custom_filters",
+        "invert_filter": "false",
+        "filters_logic_and": "true",
+        "filters_check_metadata": "true"
+      },
+      "lists": {
+        "filters_list": [
+          {
+            "key": "filters_entry_key",
+            "value": "report_year.eq.2023"
+          }
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "name": "Train",
+      "class": "filter_examples",
+      "parameters": {
+        "parameter_expression": "",
+        "condition_class": "custom_filters",
+        "invert_filter": "false",
+        "filters_logic_and": "true",
+        "filters_check_metadata": "true"
+      },
+      "lists": {
+        "filters_list": [
+          {
+            "key": "filters_entry_key",
+            "value": "report_year.ge.2016"
+          },
+          {
+            "key": "filters_entry_key",
+            "value": "report_year.le.2022"
+          }
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "name": "Select Attributes (2)",
+      "class": "blending:select_attributes",
+      "parameters": {
+        "type": "include attributes",
+        "attribute_filter_type": "a subset",
+        "select_attribute": "",
+        "select_subset": "␞avg_volume_20d_missing␞book_equity_bn_vnd␞book_equity_missing␞casa_ratio␞casa_ratio_missing␞current_ratio_proxy␞current_ratio_proxy_missing␞customer_deposits_bn_vnd␞customer_loans_bn_vnd␞daily_return_asof␞daily_return_asof_missing␞debt_to_equity␞debt_to_equity_missing␞deposit_growth_yoy␞deposit_growth_yoy_missing␞equity_bn_vnd␞liquidity_score␞listing_date_after_period_flag␞llr␞llr_missing␞loan_growth_yoy␞loan_growth_yoy_missing␞log_market_cap␞log_market_cap_missing␞market_cap_bn_vnd␞market_cap_missing␞net_income_reported_bn_vnd␞net_income_reported_missing␞nim_proxy␞nim_proxy_missing␞npl_ratio␞npl_ratio_missing␞operating_profit_before_provision_bn_vnd␞pb_ratio␞pb_ratio_missing␞prev_year_annual_ocr_missing␞price_momentum_score␞provision_expense_abs_bn_vnd␞ret_3m␞ret_3m_missing␞ret_6m␞ret_6m_missing␞risk_score_basic␞roe_pct␞segment_label␞total_assets_bn_vnd␞trading_history_years␞trading_history_years_missing␞vol_20d␞vol_20d_missing␞years_listed␞years_listed_missing",
+        "also_apply_to_special_attributes_(id,_label..)": "false",
+        "select_subset_count": 52,
+        "select_subset_parsed": [
+          "avg_volume_20d_missing",
+          "book_equity_bn_vnd",
+          "book_equity_missing",
+          "casa_ratio",
+          "casa_ratio_missing",
+          "current_ratio_proxy",
+          "current_ratio_proxy_missing",
+          "customer_deposits_bn_vnd",
+          "customer_loans_bn_vnd",
+          "daily_return_asof",
+          "daily_return_asof_missing",
+          "debt_to_equity",
+          "debt_to_equity_missing",
+          "deposit_growth_yoy",
+          "deposit_growth_yoy_missing",
+          "equity_bn_vnd",
+          "liquidity_score",
+          "listing_date_after_period_flag",
+          "llr",
+          "llr_missing",
+          "loan_growth_yoy",
+          "loan_growth_yoy_missing",
+          "log_market_cap",
+          "log_market_cap_missing",
+          "market_cap_bn_vnd",
+          "market_cap_missing",
+          "net_income_reported_bn_vnd",
+          "net_income_reported_missing",
+          "nim_proxy",
+          "nim_proxy_missing",
+          "npl_ratio",
+          "npl_ratio_missing",
+          "operating_profit_before_provision_bn_vnd",
+          "pb_ratio",
+          "pb_ratio_missing",
+          "prev_year_annual_ocr_missing",
+          "price_momentum_score",
+          "provision_expense_abs_bn_vnd",
+          "ret_3m",
+          "ret_3m_missing",
+          "ret_6m",
+          "ret_6m_missing",
+          "risk_score_basic",
+          "roe_pct",
+          "segment_label",
+          "total_assets_bn_vnd",
+          "trading_history_years",
+          "trading_history_years_missing",
+          "vol_20d",
+          "vol_20d_missing",
+          "years_listed",
+          "years_listed_missing"
+        ]
+      },
+      "lists": {}
+    },
+    {
+      "index": 11,
+      "name": "Decision Tree",
+      "class": "concurrency:parallel_decision_tree",
+      "parameters": {
+        "criterion": "gain_ratio",
+        "maximal_depth": "10",
+        "apply_pruning": "true",
+        "confidence": "0.1",
+        "apply_prepruning": "true",
+        "minimal_gain": "0.01",
+        "minimal_leaf_size": "1",
+        "minimal_size_for_split": "2",
+        "number_of_prepruning_alternatives": "3"
+      },
+      "lists": {}
+    },
+    {
+      "index": 12,
+      "name": "Multiply (2)",
+      "class": "multiply",
+      "parameters": {},
+      "lists": {}
+    },
+    {
+      "index": 13,
+      "name": "Apply Model (2)",
+      "class": "apply_model",
+      "parameters": {},
+      "lists": {
+        "application_parameters": []
+      }
+    },
+    {
+      "index": 14,
+      "name": "Performance Test",
+      "class": "performance_classification",
+      "parameters": {
+        "main_criterion": "first",
+        "accuracy": "true",
+        "classification_error": "true",
+        "kappa": "true",
+        "weighted_mean_recall": "true",
+        "weighted_mean_precision": "true",
+        "spearman_rho": "false",
+        "kendall_tau": "false",
+        "absolute_error": "false",
+        "relative_error": "false",
+        "relative_error_lenient": "false",
+        "relative_error_strict": "false",
+        "normalized_absolute_error": "false",
+        "root_mean_squared_error": "false",
+        "root_relative_squared_error": "false",
+        "squared_error": "false",
+        "correlation": "false",
+        "squared_correlation": "false",
+        "cross-entropy": "false",
+        "margin": "false",
+        "soft_margin_loss": "false",
+        "logistic_loss": "false",
+        "skip_undefined_labels": "true",
+        "use_example_weights": "true"
+      },
+      "lists": {
+        "class_weights": []
+      }
+    },
+    {
+      "index": 15,
+      "name": "Select Attributes",
+      "class": "blending:select_attributes",
+      "parameters": {
+        "type": "include attributes",
+        "attribute_filter_type": "a subset",
+        "select_attribute": "",
+        "select_subset": "␞avg_volume_20d_missing␞book_equity_bn_vnd␞book_equity_missing␞casa_ratio␞casa_ratio_missing␞current_ratio_proxy␞current_ratio_proxy_missing␞customer_deposits_bn_vnd␞customer_loans_bn_vnd␞daily_return_asof␞daily_return_asof_missing␞debt_to_equity␞debt_to_equity_missing␞deposit_growth_yoy␞deposit_growth_yoy_missing␞equity_bn_vnd␞liquidity_score␞listing_date_after_period_flag␞llr␞llr_missing␞loan_growth_yoy␞loan_growth_yoy_missing␞log_market_cap␞log_market_cap_missing␞market_cap_bn_vnd␞market_cap_missing␞net_income_reported_bn_vnd␞net_income_reported_missing␞nim_proxy␞nim_proxy_missing␞npl_ratio␞npl_ratio_missing␞operating_profit_before_provision_bn_vnd␞pb_ratio␞pb_ratio_missing␞prev_year_annual_ocr_missing␞price_momentum_score␞provision_expense_abs_bn_vnd␞ret_3m␞ret_3m_missing␞ret_6m␞ret_6m_missing␞risk_score_basic␞roe_pct␞segment_label␞total_assets_bn_vnd␞trading_history_years␞trading_history_years_missing␞vol_20d␞vol_20d_missing␞years_listed␞years_listed_missing",
+        "also_apply_to_special_attributes_(id,_label..)": "false",
+        "select_subset_count": 52,
+        "select_subset_parsed": [
+          "avg_volume_20d_missing",
+          "book_equity_bn_vnd",
+          "book_equity_missing",
+          "casa_ratio",
+          "casa_ratio_missing",
+          "current_ratio_proxy",
+          "current_ratio_proxy_missing",
+          "customer_deposits_bn_vnd",
+          "customer_loans_bn_vnd",
+          "daily_return_asof",
+          "daily_return_asof_missing",
+          "debt_to_equity",
+          "debt_to_equity_missing",
+          "deposit_growth_yoy",
+          "deposit_growth_yoy_missing",
+          "equity_bn_vnd",
+          "liquidity_score",
+          "listing_date_after_period_flag",
+          "llr",
+          "llr_missing",
+          "loan_growth_yoy",
+          "loan_growth_yoy_missing",
+          "log_market_cap",
+          "log_market_cap_missing",
+          "market_cap_bn_vnd",
+          "market_cap_missing",
+          "net_income_reported_bn_vnd",
+          "net_income_reported_missing",
+          "nim_proxy",
+          "nim_proxy_missing",
+          "npl_ratio",
+          "npl_ratio_missing",
+          "operating_profit_before_provision_bn_vnd",
+          "pb_ratio",
+          "pb_ratio_missing",
+          "prev_year_annual_ocr_missing",
+          "price_momentum_score",
+          "provision_expense_abs_bn_vnd",
+          "ret_3m",
+          "ret_3m_missing",
+          "ret_6m",
+          "ret_6m_missing",
+          "risk_score_basic",
+          "roe_pct",
+          "segment_label",
+          "total_assets_bn_vnd",
+          "trading_history_years",
+          "trading_history_years_missing",
+          "vol_20d",
+          "vol_20d_missing",
+          "years_listed",
+          "years_listed_missing"
+        ]
+      },
+      "lists": {}
+    },
+    {
+      "index": 17,
+      "name": "Apply Model",
+      "class": "apply_model",
+      "parameters": {},
+      "lists": {
+        "application_parameters": []
+      }
+    },
+    {
+      "index": 18,
+      "name": "Performance Validation",
+      "class": "performance_classification",
+      "parameters": {
+        "main_criterion": "first",
+        "accuracy": "true",
+        "classification_error": "true",
+        "kappa": "true",
+        "weighted_mean_recall": "true",
+        "weighted_mean_precision": "true",
+        "spearman_rho": "false",
+        "kendall_tau": "false",
+        "absolute_error": "false",
+        "relative_error": "false",
+        "relative_error_lenient": "false",
+        "relative_error_strict": "false",
+        "normalized_absolute_error": "false",
+        "root_mean_squared_error": "false",
+        "root_relative_squared_error": "false",
+        "squared_error": "false",
+        "correlation": "false",
+        "squared_correlation": "false",
+        "cross-entropy": "false",
+        "margin": "false",
+        "soft_margin_loss": "false",
+        "logistic_loss": "false",
+        "skip_undefined_labels": "true",
+        "use_example_weights": "true"
+      },
+      "lists": {
+        "class_weights": []
+      }
+    }
+  ]
+}

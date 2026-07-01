@@ -1,0 +1,173 @@
+{
+  "old_train_segment_label": {
+    "total": 456,
+    "counts": {
+      "Growth": 89,
+      "Risky": 167,
+      "Safe": 200
+    },
+    "rates": {
+      "Growth": 0.19517543859649122,
+      "Risky": 0.36622807017543857,
+      "Safe": 0.43859649122807015
+    }
+  },
+  "old_validation_segment_label": {
+    "total": 104,
+    "counts": {
+      "Growth": 23,
+      "Risky": 40,
+      "Safe": 41
+    },
+    "rates": {
+      "Growth": 0.22115384615384615,
+      "Risky": 0.38461538461538464,
+      "Safe": 0.3942307692307692
+    }
+  },
+  "old_test_segment_label": {
+    "total": 208,
+    "counts": {
+      "Growth": 40,
+      "Risky": 76,
+      "Safe": 92
+    },
+    "rates": {
+      "Growth": 0.19230769230769232,
+      "Risky": 0.36538461538461536,
+      "Safe": 0.4423076923076923
+    }
+  },
+  "new1_validation_train_risk10_label": {
+    "total": 552,
+    "counts": {
+      "NoRisk": 407,
+      "Risk": 145
+    },
+    "rates": {
+      "NoRisk": 0.7373188405797102,
+      "Risk": 0.26268115942028986
+    }
+  },
+  "new1_validation_train_aux_risk5_label": {
+    "total": 552,
+    "counts": {
+      "NoRisk": 393,
+      "Risk": 159
+    },
+    "rates": {
+      "NoRisk": 0.7119565217391305,
+      "Risk": 0.28804347826086957
+    }
+  },
+  "new1_validation_risk10_label": {
+    "total": 416,
+    "counts": {
+      "NoRisk": 321,
+      "Risk": 95
+    },
+    "rates": {
+      "NoRisk": 0.7716346153846154,
+      "Risk": 0.2283653846153846
+    }
+  },
+  "new1_validation_aux_risk5_label": {
+    "total": 416,
+    "counts": {
+      "NoRisk": 304,
+      "Risk": 112
+    },
+    "rates": {
+      "NoRisk": 0.7307692307692307,
+      "Risk": 0.2692307692307692
+    }
+  },
+  "new1_final_train_risk10_label": {
+    "total": 968,
+    "counts": {
+      "NoRisk": 728,
+      "Risk": 240
+    },
+    "rates": {
+      "NoRisk": 0.7520661157024794,
+      "Risk": 0.24793388429752067
+    }
+  },
+  "new1_final_train_aux_risk5_label": {
+    "total": 968,
+    "counts": {
+      "NoRisk": 697,
+      "Risk": 271
+    },
+    "rates": {
+      "NoRisk": 0.7200413223140496,
+      "Risk": 0.2799586776859504
+    }
+  },
+  "new1_test_risk10_label": {
+    "total": 234,
+    "counts": {
+      "NoRisk": 194,
+      "Risk": 40
+    },
+    "rates": {
+      "NoRisk": 0.8290598290598291,
+      "Risk": 0.17094017094017094
+    }
+  },
+  "new1_test_aux_risk5_label": {
+    "total": 234,
+    "counts": {
+      "NoRisk": 187,
+      "Risk": 47
+    },
+    "rates": {
+      "NoRisk": 0.7991452991452992,
+      "Risk": 0.20085470085470086
+    }
+  },
+  "new2_validation_train_expanded_risk10_label": {
+    "total": 10890,
+    "counts": {
+      "NoRisk": 8263,
+      "Risk": 2627
+    },
+    "rates": {
+      "NoRisk": 0.7587695133149679,
+      "Risk": 0.24123048668503214
+    }
+  },
+  "new2_validation_score_risk10_label": {
+    "total": 416,
+    "counts": {
+      "NoRisk": 321,
+      "Risk": 95
+    },
+    "rates": {
+      "NoRisk": 0.7716346153846154,
+      "Risk": 0.2283653846153846
+    }
+  },
+  "new2_test_train_expanded_risk10_label": {
+    "total": 8000,
+    "counts": {
+      "NoRisk": 6307,
+      "Risk": 1693
+    },
+    "rates": {
+      "NoRisk": 0.788375,
+      "Risk": 0.211625
+    }
+  },
+  "new2_test_score_risk10_label": {
+    "total": 234,
+    "counts": {
+      "NoRisk": 194,
+      "Risk": 40
+    },
+    "rates": {
+      "NoRisk": 0.8290598290598291,
+      "Risk": 0.17094017094017094
+    }
+  }
+}

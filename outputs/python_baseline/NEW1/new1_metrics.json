@@ -1,0 +1,173 @@
+{
+  "model": "NEW1",
+  "task": "binary earnings-risk screening",
+  "python_estimator_note": "XGBoostClassifier approximates RapidMiner/H2O GBT; exact binary identity is not expected.",
+  "feature_counts": {
+    "member_258": 258,
+    "member_309": 309,
+    "union": 357,
+    "overlap": 210
+  },
+  "split_counts": {
+    "validation_train": 552,
+    "validation": 416,
+    "final_train": 968,
+    "test": 234
+  },
+  "thresholds": {
+    "rapidminer_reference": 0.437,
+    "python_validation_selected": 0.426,
+    "python_validation_best_row": {
+      "threshold": 0.426,
+      "accuracy": 0.7740384615384616,
+      "balanced_accuracy": 0.6460731267420888,
+      "macro_f1": 0.6555320648343904,
+      "risk_precision": 0.5064935064935064,
+      "risk_recall": 0.4105263157894737,
+      "risk_f1": 0.45348837209302323,
+      "norisk_precision": 0.8348082595870207,
+      "norisk_recall": 0.881619937694704,
+      "norisk_f1": 0.8575757575757575
+    }
+  },
+  "validation_at_rapidminer_threshold": {
+    "accuracy": 0.7692307692307693,
+    "balanced_accuracy": 0.6355468109526152,
+    "macro_f1": 0.6451395059534388,
+    "per_class": {
+      "Risk": {
+        "precision": 0.49333333333333335,
+        "recall": 0.3894736842105263,
+        "f1": 0.43529411764705883,
+        "support": 95
+      },
+      "NoRisk": {
+        "precision": 0.8299120234604106,
+        "recall": 0.881619937694704,
+        "f1": 0.8549848942598187,
+        "support": 321
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Risk",
+        "NoRisk"
+      ],
+      "matrix": [
+        [
+          37,
+          58
+        ],
+        [
+          38,
+          283
+        ]
+      ]
+    }
+  },
+  "validation_at_python_selected_threshold": {
+    "accuracy": 0.7740384615384616,
+    "balanced_accuracy": 0.6460731267420888,
+    "macro_f1": 0.6555320648343904,
+    "per_class": {
+      "Risk": {
+        "precision": 0.5064935064935064,
+        "recall": 0.4105263157894737,
+        "f1": 0.45348837209302323,
+        "support": 95
+      },
+      "NoRisk": {
+        "precision": 0.8348082595870207,
+        "recall": 0.881619937694704,
+        "f1": 0.8575757575757575,
+        "support": 321
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Risk",
+        "NoRisk"
+      ],
+      "matrix": [
+        [
+          39,
+          56
+        ],
+        [
+          38,
+          283
+        ]
+      ]
+    }
+  },
+  "test_at_rapidminer_threshold": {
+    "accuracy": 0.8076923076923077,
+    "balanced_accuracy": 0.665721649484536,
+    "macro_f1": 0.6640826873385013,
+    "per_class": {
+      "Risk": {
+        "precision": 0.43902439024390244,
+        "recall": 0.45,
+        "f1": 0.4444444444444444,
+        "support": 40
+      },
+      "NoRisk": {
+        "precision": 0.8860103626943006,
+        "recall": 0.8814432989690721,
+        "f1": 0.8837209302325582,
+        "support": 194
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Risk",
+        "NoRisk"
+      ],
+      "matrix": [
+        [
+          18,
+          22
+        ],
+        [
+          23,
+          171
+        ]
+      ]
+    }
+  },
+  "test_at_python_selected_threshold": {
+    "accuracy": 0.7991452991452992,
+    "balanced_accuracy": 0.6605670103092783,
+    "macro_f1": 0.655828508840557,
+    "per_class": {
+      "Risk": {
+        "precision": 0.4186046511627907,
+        "recall": 0.45,
+        "f1": 0.43373493975903615,
+        "support": 40
+      },
+      "NoRisk": {
+        "precision": 0.8848167539267016,
+        "recall": 0.8711340206185567,
+        "f1": 0.8779220779220779,
+        "support": 194
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Risk",
+        "NoRisk"
+      ],
+      "matrix": [
+        [
+          18,
+          22
+        ],
+        [
+          25,
+          169
+        ]
+      ]
+    }
+  }
+}
